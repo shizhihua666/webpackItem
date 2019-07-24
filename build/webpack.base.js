@@ -34,14 +34,14 @@ const Config = {
                     options: {
                         name: '[name].[ext]',
                         outputPath: 'images/',
-                        limit: 2048
+                        limit: 1024
                     }
                 },{
                     loader: 'image-webpack-loader',
                     options: {
                       mozjpeg: {
                         progressive: true,
-                        quality: 95
+                        quality: 100
                       },
                       pngquant: {
                         quality: 90,
@@ -49,6 +49,7 @@ const Config = {
                       },
                       gifsicle: {
                         interlaced: false,
+                        optimizationLevel:2
                       }
                     }
                 }]
@@ -75,6 +76,6 @@ function setDate(date) {
         chunkFilename: '[name].js' // 代码拆分后的文件名
     }
 }
-setDate('20190606')
+setDate('20190712')
 
 module.exports = Config;

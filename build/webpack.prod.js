@@ -12,9 +12,8 @@ const prodConfig = {
                 test: /\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                    }
+                    'css-loader',
+                    'postcss-loader'
                 ]
             },
             {
@@ -64,6 +63,6 @@ const prodConfig = {
         })
     ]
 }
-Config.output.publicPath = '20190606/';   //想在本地看就隐藏此项
+Config.output.publicPath = '20190712/';   //挂载到服务器路径
 
 module.exports = merge(Config,prodConfig)
