@@ -5,7 +5,7 @@
     _self.widthProportion = function () {
         var p = Number((_D.body && _D.body.clientWidth || _self.Html.offsetWidth) / 750).toFixed(
             3);
-        return p > 1.067 ? 1.067 : p < 0.444 ? 0.444 : p;
+        return p > 1.0 ? 1.0 : p < 0.427 ? 0.427 : p;
     };
     _self.changePage = function () {
         _self.Html.setAttribute("style", "font-size:" + _self.widthProportion() * 100 +

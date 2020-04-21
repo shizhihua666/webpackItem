@@ -12,7 +12,19 @@ const Toast = (text) => {
         },2000)
     }
 }
+const SuccessModal = () => {
+    let body = document.getElementsByTagName('body')[0];
+    let modal = document.createElement('div');
+    modal.setAttribute('id','success-modal');
+    modal.innerHTML = '<img style="width: 7.5rem" src="http://modulefile.holike.com/marketing/marketing/img/success_cx.png" />';
+    body.appendChild(modal);
+    const sucModal = document.getElementById('success-modal');
+    sucModal.onclick = ()=> {
+        sucModal.style.display = 'none';
+    }
+}
 
 export {
-    Toast
+    Toast,
+    SuccessModal
 };

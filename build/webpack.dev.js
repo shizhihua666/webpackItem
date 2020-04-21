@@ -7,6 +7,7 @@ const devConfig = {
     devServer: {
         contentBase: './dist',
         port: 8088,
+        host: '0.0.0.0',
         proxy: {
             "/location": {
                 target: 'http://api.map.baidu.com/',

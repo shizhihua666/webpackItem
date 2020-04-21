@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const pageName = require('./pageName')
 
 const Config = {
     entry: {
@@ -11,10 +12,10 @@ const Config = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                use: ['babel-loader']
             },
             {
-                test: /\.(eot|svg|ttf|woff|woff2)$/,
+                test: /\.(eot|svg|ttf|woff|woff2|mp4)$/,
                 use: ['file-loader']
             },
             {
@@ -34,7 +35,7 @@ const Config = {
                     options: {
                         name: '[name].[ext]',
                         outputPath: 'images/',
-                        limit: 1024
+                        limit: 102
                     }
                 },{
                     loader: 'image-webpack-loader',
@@ -44,7 +45,7 @@ const Config = {
                         quality: 100
                       },
                       pngquant: {
-                        quality: 90,
+                        quality: 100,
                         speed: 4
                       },
                       gifsicle: {
@@ -57,13 +58,13 @@ const Config = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
     ],
     output: {
         
     }
-    
 }
+
 function setDate(date) {
     Config.entry.main = `./src/${date}/index.js`;
     Config.plugins.push(new HtmlWebpackPlugin({
@@ -76,6 +77,7 @@ function setDate(date) {
         chunkFilename: '[name].js' // 代码拆分后的文件名
     }
 }
-setDate('20190712')
 
+
+setDate(pageName)
 module.exports = Config;
