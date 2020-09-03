@@ -18,7 +18,7 @@
     "happypack": "^5.0.1",
     "hard-source-webpack-plugin": "^0.13.1",
     "jquery": "^3.4.1",
-    "lazysizes": "^5.0.0-rc1",
+    "lazysizes": "^5.2.1",
     "lib-flexible": "^0.3.2",
     "postcss-plugin-px2rem": "^0.8.1",
     "select-plugin": "^1.0.12",
