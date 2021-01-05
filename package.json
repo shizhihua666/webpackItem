@@ -12,7 +12,7 @@
   "license": "ISC",
   "dependencies": {
     "@babel/polyfill": "^7.4.3",
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "core-js": "^3.4.7",
     "expose-loader": "^0.7.5",
     "happypack": "^5.0.1",
